@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Kestrel thumbnail</title>
+    <style>
+      @font-face {
+        font-family: "Geist";
+        src: url("file:///C:/React/kestrel-template/node_modules/geist/dist/fonts/geist-sans/Geist-Regular.ttf");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Geist";
+        src: url("file:///C:/React/kestrel-template/node_modules/geist/dist/fonts/geist-sans/Geist-SemiBold.ttf");
+        font-weight: 600;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        width: 1280px;
+        height: 720px;
+        overflow: hidden;
+        background: #08080b;
+        background-image: radial-gradient(
+          900px 520px at 22% -10%,
+          rgba(109, 94, 248, 0.3),
+          transparent 70%
+        );
+        font-family: "Geist", system-ui, sans-serif;
+        color: #ededf0;
+        display: flex;
+        align-items: center;
+        gap: 56px;
+        padding: 0 0 0 72px;
+      }
+
+      .left { width: 470px; flex-shrink: 0; }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 34px;
+      }
+      .mark {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        background: #6d5ef8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .wordmark { font-size: 27px; font-weight: 600; letter-spacing: -0.02em; }
+
+      h1 {
+        font-size: 52px;
+        font-weight: 600;
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+      }
+
+      p.lead {
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 1.5;
+        color: #a1a1ae;
+      }
+
+      .chips {
+        margin-top: 32px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+      }
+      .chip {
+        border: 1px solid #2b2b36;
+        background: #16161c;
+        border-radius: 999px;
+        padding: 7px 15px;
+        font-size: 14px;
+        color: #a1a1ae;
+      }
+      .chip.accent {
+        border-color: rgba(109, 94, 248, 0.35);
+        background: rgba(109, 94, 248, 0.14);
+        color: #8f83fb;
+      }
+
+      /* The product shot, cropped to the hero and floated off the right edge. */
+      .shot {
+        flex: 1;
+        height: 620px;
+        border-radius: 16px 0 0 16px;
+        border: 1px solid #1e1e26;
+        border-right: none;
+        overflow: hidden;
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.6);
+      }
+      .shot img { width: 1000px; display: block; }
+    </style>
+  </head>
+  <body>
+    <div class="left">
+      <div class="brand">
+        <div class="mark">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff">
+            <path d="M12 3 L20 21 L12 16.5 L4 21 Z" />
+          </svg>
+        </div>
+        <span class="wordmark">Kestrel</span>
+      </div>
+
+      <h1>A landing page you can rebrand in an afternoon</h1>
+
+      <p class="lead">
+        Six pages, an MDX blog, light and dark — and one config file that holds
+        every word on the site.
+      </p>
+
+      <div class="chips">
+        <span class="chip accent">Next.js 16</span>
+        <span class="chip accent">Tailwind v4</span>
+        <span class="chip">6 pages</span>
+        <span class="chip">MDX blog + changelog</span>
+        <span class="chip">Light &amp; dark</span>
+        <span class="chip">WCAG AA</span>
+        <span class="chip">No animation library</span>
+      </div>
+    </div>
+
+    <div class="shot">
+      <img src="screenshots/01-home-dark.png" alt="" />
+    </div>
+  </body>
+</html>

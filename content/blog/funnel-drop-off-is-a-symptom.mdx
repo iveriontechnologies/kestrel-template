@@ -1,0 +1,35 @@
+---
+title: "Funnel drop-off is a symptom, not a diagnosis"
+description: "Knowing that 40% of users abandon at step three is the easy part. Here is how to work out why, without guessing or running a survey."
+date: "2026-08-04"
+tags: ["Product"]
+draft: false
+---
+
+A funnel tells you where people leave. It never tells you why, and the gap between those two things is where most product teams lose a quarter.
+
+The usual response to a bad step is a redesign. Someone reworks the screen, ships it, and the number moves two points in either direction — which is inside the noise, so nobody can say whether it worked. The redesign was a guess dressed up as a fix.
+
+> A funnel is a question generator, not an answer. The moment it starts producing answers on its own, someone has stopped reading it and started projecting onto it.
+
+## Three things to do before you touch the design
+
+1. **Break the step down by segment.** Plan, platform, traffic source, whether the account is new or returning. A step that converts at 60% overall and 20% on mobile is not a copy problem, it is a layout problem, and you would never have found that in the aggregate.
+2. **Look at time-to-convert, not just conversion.** People who complete the step in eight seconds and people who complete it in four minutes are having different experiences, and the four-minute group usually contains the confusion you are looking for.
+3. **Watch the sessions.** Not a sample of ten, but the ones that reached the step and abandoned within thirty seconds. Rage clicks and dead ends cluster hard, and twenty minutes of watching usually surfaces something no amount of chart-reading would have.
+
+![A four-step checkout funnel split by platform. Desktop holds at 61% to the final step while mobile falls to 19%.](/blog/funnel-by-segment.svg)
+
+The chart above is the whole argument. Read as one line, this funnel loses 39% of its users and looks like a copy problem worth a week of wordsmithing. Split by platform, it is two entirely different products: desktop leaks gently the whole way down, and mobile falls off a cliff between step two and step three. Nothing about the aggregate number told you which of those you had.
+
+### What the segment split usually finds
+
+In our own data, the three that come up most often are a viewport that hides the primary action below the fold, a validation error that only fires on a real keyboard, and a third-party script that fails on slower connections. All three are invisible in aggregate and obvious the moment you break the step down.
+
+---
+
+## Then, and only then, redesign
+
+By that point you are fixing something specific rather than rearranging a screen and hoping. You also have a number to check afterwards: not overall conversion, which moves for a dozen reasons, but the conversion of the segment you set out to fix.
+
+If you want the mechanics of setting this up, the [funnels documentation](https://example.com/docs/funnels) covers breakdowns and time-to-convert, and the post on [instrumenting a launch](/blog/instrumenting-a-launch) covers deciding the threshold before you ship rather than after.

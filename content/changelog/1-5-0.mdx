@@ -1,0 +1,15 @@
+---
+title: "Warehouse sync now runs continuously"
+description: "Snowflake, BigQuery, and S3 destinations move from nightly batches to a five-minute pipeline."
+date: "2026-07-30"
+version: "1.5.0"
+draft: false
+---
+
+Warehouse sync used to run once a night. It now streams continuously, with a five-minute target from capture to landed row.
+
+- Backfills run in parallel with live sync, so connecting a destination no longer pauses it.
+- Schema changes are applied additively — a new event property adds a column instead of failing the batch.
+- Sync health, lag, and last-error are exposed on the destination page.
+
+**Breaking:** the `synced_at` column now reflects the row's landing time rather than the batch start. Queries that grouped by `synced_at` to reconstruct nightly batches will need to group by `captured_at` instead.

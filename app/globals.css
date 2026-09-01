@@ -1,0 +1,319 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark, .dark *));
+
+/* ============================================================
+   KESTREL DESIGN TOKENS
+
+   Two layers:
+   1. The Kestrel palette — the vocabulary this template is
+      written in, and the only thing a buyer needs to edit.
+   2. The shadcn semantic layer — mapped onto layer 1 so every
+      shadcn primitive inherits the design with no edits.
+
+   Change --accent and the whole site rebrands, shadcn
+   components included.
+   ============================================================ */
+
+/* ---------- Light ---------- */
+:root {
+  /* Kestrel palette */
+  --bg: #ffffff;
+  --bg-subtle: #fafafc;
+  --surface: #ffffff;
+  --surface-raised: #f7f7f9;
+
+  --border: #e7e7ec;
+  --border-strong: #d3d3db;
+
+  --fg: #0a0a0f;
+  --fg-secondary: #55555f;
+  --fg-muted: #6a6a76;
+
+  --accent: #5b4be8;
+  --accent-hover: #4c3cd9;
+  --accent-contrast: #ffffff;
+  /* The accent when it is text rather than a fill. Light mode needs no
+     separate value — #5b4be8 already clears AA on every surface here. */
+  --accent-text: var(--accent);
+  --accent-subtle: rgb(91 75 232 / 0.09);
+  --accent-border: rgb(91 75 232 / 0.28);
+
+  /* Darker than the usual 600-step greens and reds: at 10–11px on
+     --surface-raised the brighter values read 3.52:1 and 4.39:1, both under
+     AA. The dark palette's equivalents already clear it and are unchanged. */
+  --success: #047857;
+  --warning: #b45309;
+  --danger: #be123c;
+  --info: #1d4ed8;
+
+  --chart-1: var(--accent);
+  --chart-2: #0891b2;
+  --chart-3: #059669;
+  --chart-4: #d97706;
+  --chart-5: #8b8b97;
+
+  --shadow-sm: 0 1px 2px rgb(16 16 20 / 0.06);
+  --shadow-md: 0 4px 12px rgb(16 16 20 / 0.08);
+  --shadow-lg: 0 16px 48px rgb(16 16 20 / 0.12);
+  --shadow-glow: 0 0 80px rgb(91 75 232 / 0.14);
+
+  --grid-line: rgb(10 10 15 / 0.05);
+
+  /* shadcn semantic layer → Kestrel palette */
+  --background: var(--bg);
+  --foreground: var(--fg);
+  --card: var(--surface);
+  --card-foreground: var(--fg);
+  --popover: var(--surface);
+  --popover-foreground: var(--fg);
+  --primary: var(--accent);
+  --primary-foreground: var(--accent-contrast);
+  --secondary: var(--surface-raised);
+  --secondary-foreground: var(--fg);
+  --muted: var(--surface-raised);
+  --muted-foreground: var(--fg-muted);
+  --destructive: var(--danger);
+  --input: var(--border);
+  --ring: var(--accent);
+  --radius: 0.5rem;
+}
+
+/* ---------- Dark — the designed-first palette ---------- */
+.dark {
+  --bg: #08080b;
+  --bg-subtle: #0c0c10;
+  --surface: #101014;
+  --surface-raised: #16161c;
+
+  --border: #1e1e26;
+  --border-strong: #2b2b36;
+
+  --fg: #ededf0;
+  --fg-secondary: #a1a1ae;
+  --fg-muted: #86869a;
+
+  --accent: #6d5ef8;
+  --accent-hover: #8175fa;
+  --accent-contrast: #ffffff;
+  /* Lighter than --accent, which reads at only 3.95:1 as text on
+     --surface-raised. The fill keeps its own value: white on --accent is
+     4.56:1, and lightening the fill would break that. */
+  --accent-text: #8f83fb;
+  --accent-subtle: rgb(109 94 248 / 0.14);
+  --accent-border: rgb(109 94 248 / 0.35);
+
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #f43f5e;
+  --info: #3b82f6;
+
+  --chart-1: var(--accent);
+  --chart-2: #22d3ee;
+  --chart-3: #34d399;
+  --chart-4: #fbbf24;
+  --chart-5: #6c6c7a;
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 0.45);
+  --shadow-lg: 0 16px 48px rgb(0 0 0 / 0.55);
+  --shadow-glow: 0 0 80px rgb(109 94 248 / 0.25);
+
+  --grid-line: rgb(255 255 255 / 0.04);
+}
+
+@theme inline {
+  /* Fonts */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-heading: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Kestrel colors */
+  --color-bg: var(--bg);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-fg: var(--fg);
+  --color-fg-secondary: var(--fg-secondary);
+  --color-fg-muted: var(--fg-muted);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-text: var(--accent-text);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-accent-border: var(--accent-border);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* shadcn semantic colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Radius — fixed steps, not derived */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* Containers */
+  --container-page: 1200px;
+  --container-reading: 680px;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--accent-subtle);
+    color: var(--fg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Faint grid behind the hero and CTA bands. Masked so it fades out
+     rather than ending on a hard edge. Spec: ui-tokens.md. */
+  .bg-grid {
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(
+      ellipse at 50% 0%,
+      black 35%,
+      transparent 75%
+    );
+    mask-image: radial-gradient(ellipse at 50% 0%, black 35%, transparent 75%);
+  }
+
+  /* Exactly one of these per page. More than one cheapens the design. */
+  .hero-glow {
+    background: radial-gradient(
+      ellipse 60% 50% at 50% 0%,
+      var(--accent-subtle),
+      transparent 70%
+    );
+  }
+}
+
+@layer components {
+  /* ============================================================
+     SCROLL REVEAL
+
+     Driven by components/motion/Reveal.tsx, which owns only the
+     timing of the flip. Everything visual is here, next to the
+     rest of the design values.
+
+     --reveal-duration and --reveal-step are set inline by the
+     component from the constants in lib/utils.ts, so the numbers
+     exist in exactly one place.
+
+     This uses an animation rather than a transition on purpose.
+     Cards carry `transition-colors duration-150` for their hover
+     border, and Tailwind utilities sit in a later layer than this
+     one — a `transition` here loses to theirs, and the reveal
+     silently snaps instead of playing. Animations do not compete
+     for that property.
+     ============================================================ */
+  @keyframes kestrel-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(var(--reveal-rise));
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  [data-reveal] {
+    --reveal-rise: 16px;
+  }
+
+  [data-reveal="block"] {
+    opacity: 0;
+  }
+
+  [data-reveal="block"][data-revealed] {
+    animation: kestrel-reveal var(--reveal-duration) ease-out both;
+  }
+
+  /* The staggered container never moves — its children do, one after the
+     next. This is what lets Reveal replace a grid or a list instead of
+     wrapping it. */
+  [data-reveal="stagger"] > * {
+    opacity: 0;
+  }
+
+  [data-reveal="stagger"][data-revealed] > * {
+    animation: kestrel-reveal var(--reveal-duration) ease-out both;
+  }
+
+  [data-reveal="stagger"][data-revealed] > *:nth-child(2) {
+    animation-delay: calc(1 * var(--reveal-step));
+  }
+  [data-reveal="stagger"][data-revealed] > *:nth-child(3) {
+    animation-delay: calc(2 * var(--reveal-step));
+  }
+  [data-reveal="stagger"][data-revealed] > *:nth-child(4) {
+    animation-delay: calc(3 * var(--reveal-step));
+  }
+  [data-reveal="stagger"][data-revealed] > *:nth-child(5) {
+    animation-delay: calc(4 * var(--reveal-step));
+  }
+  [data-reveal="stagger"][data-revealed] > *:nth-child(6) {
+    animation-delay: calc(5 * var(--reveal-step));
+  }
+
+  /* Correct from the first paint, with no JavaScript involved. The component
+     also skips the observer for these users, but this is what guarantees the
+     page is never briefly invisible to them. */
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal],
+    [data-reveal] > * {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
+  }
+}

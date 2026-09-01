@@ -1,0 +1,25 @@
+---
+title: "Stop writing tracking plans nobody follows"
+description: "The taxonomy meeting is where analytics projects go to die. Autocapture skips it entirely, and the events are there when you finally think of the question."
+date: "2026-08-18"
+tags: ["Analytics"]
+draft: false
+---
+
+Every analytics rollout starts the same way. Someone books a meeting called "event taxonomy", eight people attend, and four weeks later there is a spreadsheet with two hundred rows in it. Half of those events are never implemented. Of the ones that are, a third are named inconsistently across platforms, and nobody notices until someone builds a funnel that silently drops half its users.
+
+The premise of a tracking plan is that you know in advance which questions you will need to answer. You do not. The questions that matter arrive after something ships and the numbers look strange, and they are almost never the questions you would have written down in March.
+
+Autocapture inverts the order. Every click, pageview, and form submit is recorded from the moment the snippet loads. When the question arrives, the data is already behind you. You define the event you care about after the fact, against history you already have, instead of instrumenting it and waiting a month for the sample to build.
+
+This does not mean taxonomy is worthless. It means it should be the output of a few months of real questions rather than the input to them. The events you end up naming and pinning to dashboards are the ones that survived contact with an actual decision, which is a far better filter than a room full of people guessing.
+
+The practical version: install autocapture on day one, answer questions ad hoc for a quarter, then promote the twenty events you actually kept using into a documented set. You will have a shorter plan, and it will be one people follow, because every entry in it earned its place.
+
+There are two objections worth taking seriously. The first is volume: capturing everything costs more than capturing a curated set. True, and largely irrelevant at the scale most teams operate at. The second is noise — a long list of autocaptured events is harder to navigate than a short curated one. Also true, and the reason the promotion step above matters. The answer is not to capture less up front, it is to name the things you kept using.
+
+The third objection, the one people rarely say out loud, is that a tracking plan is a legible artifact. It can be shown to a stakeholder, put in a document, and pointed at as evidence that analytics is being taken seriously. This is a real function and it is not a data function. If that is what the plan is for, write it — but do not let it gate the install, and do not confuse having agreed on names with having answered anything.
+
+The teams that get value out of analytics fastest are not the ones with the best taxonomy. They are the ones where the gap between a question occurring to someone and that question being answered is measured in minutes. Everything else is downstream of that gap, and a four-week planning exercise makes it wider before it makes it narrower.
+
+Install first. Name later. The names will be better for it.

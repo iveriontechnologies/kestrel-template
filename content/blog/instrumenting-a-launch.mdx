@@ -1,0 +1,48 @@
+---
+title: "How to instrument a launch in an afternoon"
+description: "A short checklist for the day before you ship: what to capture, what to leave alone, and the one dashboard worth building in advance."
+date: "2026-06-27"
+tags: ["Engineering"]
+draft: false
+---
+
+The day before a launch is the wrong time to design an analytics strategy and the right time to make sure you can tell, next week, whether the thing worked.
+
+## Start from the decision, not the events
+
+Write down the sentence you want to be able to say seven days from now — "X% of accounts that saw the new flow finished it" — and work backwards to the two or three events that sentence requires. Two or three. Not fifteen.
+
+For that sentence you need exactly two custom events, because autocapture already has the pageviews:
+
+```tsx
+import { kestrel } from "@kestrel/browser";
+
+// Fired once, when the new flow first renders for an account.
+kestrel.capture("import_flow_started", {
+  source: "onboarding",
+  variant: "v2",
+});
+
+// Fired on the success screen, not on the submit handler — a submit that
+// fails still counts as a submit, and that is how funnels quietly lie.
+kestrel.capture("import_flow_completed", {
+  rows_imported: rows.length,
+});
+```
+
+Note where the second call sits. Firing on submit rather than on success is the single most common instrumentation bug, and it inflates the last step of every funnel it touches.
+
+## The checklist
+
+- **Check the events fire before you ship, not after.** This sounds obvious and is the most common failure: the launch goes out, the dashboard stays at zero, and by the time anyone notices, the first week is gone and cannot be recovered.
+- **Build the dashboard in advance and leave it empty.** An empty chart on a screen someone will look at is a much better forcing function than an intention to build one later, and it makes a broken event obvious within hours instead of days.
+- **Write down what would count as it not working.** Put the number somewhere other people can see it, before the launch. Teams are remarkably good at finding a reading of the data that supports whatever they shipped, and the only reliable defence is having committed while the outcome was still unknown.
+- **Leave everything else alone.** Autocapture is already recording the rest, so anything you did not think of is still available afterwards.
+
+## What not to do
+
+Resist the urge to add a dozen custom events for a launch. Each one is a name you maintain forever, a line in a review, and a thing that breaks silently when someone refactors the component it lived in — all in exchange for questions nobody has asked yet.
+
+If you need more than three, that is usually a sign the launch is really several launches, and the funnel you are about to build will be measuring more than one thing at once. Split it, or accept that the number will be hard to interpret.
+
+The related reading here is [why funnel drop-off is a symptom](/blog/funnel-drop-off-is-a-symptom), which covers what to do with the numbers once they start arriving.

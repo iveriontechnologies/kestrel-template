@@ -1,0 +1,44 @@
+---
+title: "What a flattening retention curve actually means"
+description: "A curve that flattens is the strongest signal a product has found its people. The trap is reading it before the cohorts are old enough to say anything."
+date: "2026-07-22"
+tags: ["Analytics"]
+draft: false
+---
+
+Retention curves get quoted more than any other chart and misread more than all of them combined.
+
+The shape everyone wants is a curve that drops steeply, then flattens. The flattening is the important half: it means some group of people reached a point where the product became part of how they work, and they stopped churning out. A curve that keeps sloping down, however gently, has no floor, and a product with no floor eventually empties no matter how much you pour into the top.
+
+## Three ways to misread one
+
+### Reading it too early
+
+A cohort needs to be older than the flattening point before it can tell you where the floor is, and for most B2B products that is eight to twelve weeks. Reading a four-week-old cohort and declaring the curve flat is reading noise — and it is the kind of noise that tends to confirm whatever you already believed.
+
+### Averaging every cohort together
+
+Your product changed. The people who signed up in January met a different product than the ones who signed up in June, and mashing them into one line hides whether the changes helped. Look at cohorts side by side and check whether the newer curves sit above the older ones:
+
+| Cohort | Week 1 | Week 4 | Week 8 | Week 12 |
+| ------ | -----: | -----: | -----: | ------: |
+| January | 100% | 41% | 33% | 31% |
+| March | 100% | 44% | 36% | 34% |
+| June | 100% | 52% | 45% | 44% |
+| September | 100% | 55% | 47% | — |
+
+That is the table to look at, not the headline number. Week 12 moved from 31% to 44% across three quarters, and no single monthly figure would have shown it.
+
+### Measuring the wrong return
+
+Returning to the site is not the same as using the product, which is not the same as getting value from it. Pick the definition closest to the thing you actually sell — for us it is `query_executed`, not `session_started` — then keep it fixed. A curve that improves because the definition loosened is the most expensive kind of good news.
+
+---
+
+## The move that is actually worth making
+
+Split retention by what people did in their first week. Almost always, one or two actions separate the cohort that stays from the one that leaves. That is your activation event, and it is worth more than any other number on the dashboard, because it is the one thing onboarding can be pointed at.
+
+> Correlation is doing a lot of work here. The people who connected an integration in week one may simply have arrived more committed, and pushing everyone through the same action will not make them more committed. Treat the activation event as a hypothesis worth testing, not a lever to pull.
+
+The [retention documentation](https://example.com/docs/retention) covers building the cohort grid, and [self-serve analytics when there is no data team](/blog/self-serve-analytics-without-a-data-team) covers keeping the definition fixed once you have picked it.

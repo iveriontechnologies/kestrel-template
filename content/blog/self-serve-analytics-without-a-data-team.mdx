@@ -1,0 +1,19 @@
+---
+title: "Self-serve analytics when there is no data team"
+description: "Most companies get their first analytics tool years before their first analyst. Here is what to set up so the gap does not hurt."
+date: "2026-07-09"
+tags: ["Engineering"]
+draft: false
+---
+
+The advice written for companies with data teams does not transfer. Warehouse-first, dbt models, a semantic layer, an analyst who owns definitions — all reasonable, all irrelevant if there are eleven of you and nobody has the word data in their job title.
+
+What matters instead is that the people asking questions can answer them without filing a ticket. That means three things.
+
+Definitions live in one place and are visible. If "active user" means something different in two dashboards, every meeting about the number becomes a meeting about the definition. Name the events, write down what they mean where people can see it, and resist having two.
+
+The tool has to be usable by whoever has the question. If answering anything requires SQL, questions get batched, batched questions get deprioritized, and the loop closes once a month instead of once an hour. The speed of the loop matters more than the sophistication of any single answer.
+
+Export is non-negotiable, even before you need it. The day you hire an analyst they will want the raw events in a warehouse, and a tool that makes that hard turns a good hire into a migration project.
+
+None of this requires a data team. It requires deciding, early, that answering a question should take minutes.

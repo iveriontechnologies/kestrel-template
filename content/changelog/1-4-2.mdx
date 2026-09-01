@@ -1,0 +1,13 @@
+---
+title: "Session replay fixes"
+description: "Three replay bugs, including one that dropped the last few seconds of a session."
+date: "2026-07-11"
+version: "1.4.2"
+draft: false
+---
+
+A maintenance release, entirely fixes.
+
+- Replays no longer truncate when a tab is closed rather than navigated away from. This affected roughly 4% of sessions and always cut the most interesting part.
+- Canvas elements render in replay instead of appearing blank.
+- The replay scrubber keeps its position when the network stalls, rather than jumping to the start.

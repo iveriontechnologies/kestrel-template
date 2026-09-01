@@ -1,0 +1,15 @@
+---
+title: "Anomaly detection on any saved metric"
+description: "Alerts that fire on a deviation from the trend rather than a fixed threshold."
+date: "2026-08-20"
+version: "1.6.0"
+draft: false
+---
+
+Threshold alerts only catch the problems you predicted. Anomaly detection watches the shape of a metric and fires when it leaves its own recent range, which catches the ones you did not.
+
+- Available on any saved metric, with sensitivity set per alert rather than per workspace.
+- Seasonality is modelled over the trailing eight weeks, so a quiet weekend is not an incident.
+- Routes to the same Slack and email destinations as threshold alerts.
+
+Anomaly alerts are on Scale. Existing threshold alerts are unchanged and keep working exactly as before.
