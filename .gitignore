@@ -44,3 +44,6 @@ next-env.d.ts
 
 # local editor / agent harness config, not part of the template
 .claude/
+
+# throwaway browser profile used by marketing/capture.mjs
+marketing/.capture-profile/

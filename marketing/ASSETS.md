@@ -6,55 +6,70 @@ What is here, how it was made, and the two pieces still outstanding.
 
 ## Captured
 
-All screenshots were taken against the **production build** (`npm run build && npm run start`),
+All shots are taken against the **production build** (`npm run build && npm run start`),
 not the dev server, so what you see is what a visitor gets.
 
-| File | Viewport | Page | Theme |
+| File | Output | Page | Theme |
 | --- | --- | --- | --- |
-| `screenshots/01-home-dark.png` | 1440×900 | Home, above the fold | Dark |
-| `screenshots/02-home-dark-full.png` | 1440×3400 | Home, long scroll | Dark |
-| `screenshots/03-home-light.png` | 1440×900 | Home, above the fold | Light |
-| `screenshots/04-pricing-dark.png` | 1440×1700 | Pricing | Dark |
-| `screenshots/05-blog-dark.png` | 1440×1250 | Blog index | Dark |
-| `screenshots/06-post-dark.png` | 1440×1500 | Blog post | Dark |
-| `screenshots/07-changelog-dark.png` | 1440×1500 | Changelog | Dark |
-| `screenshots/08-mobile-home-dark.png` | 390×844 | Home | Dark |
-| `screenshots/09-mobile-pricing-dark.png` | 390×1500 | Pricing | Dark |
-| `screenshots/10-404-dark.png` | 1440×900 | 404 | Dark |
-| `screenshots/11-pricing-light.png` | 1440×1700 | Pricing | Light |
-| `screenshots/12-post-light.png` | 1440×1500 | Blog post | Light |
-| `thumbnail.png` | 1280×720 | Marketplace card | Dark |
+| `screenshots/01-home-dark.png` | 2880×1800 (1440×900 @2x) | Home, above the fold | Dark |
+| `screenshots/02-home-dark-full.png` | 1440×6757 | Home, full page | Dark |
+| `screenshots/03-home-light.png` | 2880×1800 @2x | Home, above the fold | Light |
+| `screenshots/04-home-light-full.png` | 1440×6757 | Home, full page | Light |
+| `screenshots/05-pricing-dark.png` | 1440×4829 | Pricing, full page | Dark |
+| `screenshots/06-pricing-light.png` | 1440×4829 | Pricing, full page | Light |
+| `screenshots/07-blog-dark.png` | 1440×1817 | Blog index, full page | Dark |
+| `screenshots/08-post-dark.png` | 1440×3017 | Blog post, full page | Dark |
+| `screenshots/09-post-light.png` | 1440×3017 | Blog post, full page | Light |
+| `screenshots/10-changelog-dark.png` | 1440×2995 | Changelog, full page | Dark |
+| `screenshots/11-404-dark.png` | 2880×1800 @2x | 404 | Dark |
+| `screenshots/12-mobile-home-dark.png` | 780×1688 (390×844 @2x) | Home | Dark |
+| `screenshots/13-mobile-home-dark-full.png` | 390×9567 | Home, full page | Dark |
+| `screenshots/14-mobile-pricing-dark.png` | 780×1688 @2x | Pricing | Dark |
+| `screenshots/15-mobile-home-light.png` | 780×1688 @2x | Home | Light |
+| `thumbnail.png` | 2560×1440 (1280×720 @2x) | Marketplace card | Dark |
 
-`thumbnail.html` is the source for the thumbnail — edit the headline or the chips
-there and re-render with the command below.
+`thumbnail.html` is the source for the card — edit the headline or the chips
+there and re-run the capture.
+
+**Need a close-up of the dashboard mockup?** Crop it out of
+`02-home-dark-full.png`. It sits roughly 850–1450px down at full width.
 
 ### How to re-capture
 
-Start the production server, then run headless Edge or Chrome with
-`--screenshot`. No tooling to install:
-
 ```bash
 npm run build
-npm run start -- -p 3100
+npx next start -p 3100     # leave running in one terminal
+node marketing/capture.mjs # in another
 ```
 
-```bash
-"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" \
-  --headless=new --disable-gpu --hide-scrollbars \
-  --window-size=1440,900 \
-  --screenshot="marketing\screenshots\01-home-dark.png" \
-  "http://localhost:3100/"
-```
+The script wipes `screenshots/`, re-shoots everything in the list at the top of
+`capture.mjs`, and re-renders the thumbnail last (it embeds shot 01, so order
+matters). Add or change a shot by editing that list. `BROWSER=/path/to/chrome`
+overrides the browser; `ORIGIN=…` points it at a deployed URL instead of
+localhost.
 
-For the thumbnail, add `--allow-file-access-from-files` and point at
-`file:///…/marketing/thumbnail.html`.
+### Why a script instead of a one-line browser flag
 
-**Light-theme shots need one extra step.** The captures run before any JavaScript
-sets a theme preference, so they always render the default. To capture light mode,
-temporarily set `defaultTheme="light"` in `app/layout.tsx`, rebuild, capture, then
-**change it back and rebuild again**. That is how `03`, `11`, and `12` were made.
+Three things the `--screenshot` command-line flag gets wrong here, all of which
+produced bad assets before the script existed:
 
----
+- **Scroll reveals.** Sections start at `opacity: 0` and are revealed by an
+  IntersectionObserver. The flag captures on load, before any of that runs, so
+  everything below the hero came out **completely blank**. The script emulates
+  `prefers-reduced-motion`, which the stylesheet honours by painting every
+  section visible at first paint with no JavaScript involved.
+- **Viewport size.** The browser subtracts window chrome from `--window-size`
+  (asking for 1440×844 gives a 1414×751 viewport) and enforces a minimum width
+  around 496px. A 390px mobile request rendered the page at 496 and cropped it
+  to 390, cutting the headline and the logo cloud off mid-word. The script sets
+  device metrics over the DevTools protocol, so 390 means 390.
+- **Extensions.** A force-installed browser extension painted a floating badge
+  into the bottom-right corner of every capture, and a fresh profile did not
+  stop it. The script passes `--disable-extensions`.
+
+It also removes a manual step: light-mode shots used to need `defaultTheme`
+flipped in `app/layout.tsx` and a rebuild. The script seeds `localStorage`
+before the page's own scripts run, so both themes come out of one pass.
 
 ## Still outstanding
 
