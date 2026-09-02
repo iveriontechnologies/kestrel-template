@@ -8,10 +8,53 @@ import { siteConfig } from "@/site.config";
  * The environment variable wins so a preview deploy is not tagged with the
  * production URL, which is how duplicate canonicals get indexed. It falls back
  * to `siteConfig.url`, so a fresh clone builds with no `.env` file at all.
+ *
+ * Each candidate is validated rather than trusted. `??` is not enough: a host
+ * that defines the variable with no value hands over an empty string, which is
+ * not null, so `??` passes it through and `new URL("")` fails the build in
+ * `app/layout.tsx` with nothing but "Invalid URL" to go on. Vercel does exactly
+ * that when the variable is added to a project without a value.
  */
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? siteConfig.url)
-  .trim()
-  .replace(/\/+$/, "");
+function resolveSiteUrl(): string {
+  const candidates: { source: string; value: string | undefined }[] = [
+    { source: "NEXT_PUBLIC_SITE_URL", value: process.env.NEXT_PUBLIC_SITE_URL },
+    { source: "site.config.ts url", value: siteConfig.url },
+  ];
+
+  for (const { source, value } of candidates) {
+    let candidate = value?.trim().replace(/\/+$/, "");
+
+    if (!candidate) {
+      // Absent is fine and expected. Present-but-empty means somebody tried to
+      // set it and it did not take, which is worth saying out loud.
+      if (value !== undefined) {
+        console.warn(`[seo] ${source} is set but empty. Falling back.`);
+      }
+      continue;
+    }
+
+    // A bare host is the most common way to get this wrong, and failing the
+    // build over a missing "https://" helps nobody.
+    if (!/^https?:\/\//i.test(candidate)) candidate = `https://${candidate}`;
+
+    try {
+      new URL(candidate);
+      return candidate;
+    } catch {
+      // Falling back silently would publish canonicals pointing at the
+      // placeholder domain, which is worse than a noisy build log.
+      console.warn(
+        `[seo] ${source} is not a usable URL (${JSON.stringify(value)}). Falling back.`,
+      );
+    }
+  }
+
+  throw new Error(
+    "[seo] No usable site URL. Set NEXT_PUBLIC_SITE_URL, or fix `url` in site.config.ts.",
+  );
+}
+
+export const siteUrl = resolveSiteUrl();
 
 /** Absolute URL for a site-relative path. */
 export function absoluteUrl(path = "/"): string {
