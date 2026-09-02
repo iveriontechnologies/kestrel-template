@@ -56,6 +56,19 @@ function resolveSiteUrl(): string {
 
 export const siteUrl = resolveSiteUrl();
 
+// A production build that falls through to the placeholder ships canonicals,
+// a sitemap, and an og:image pointing at a domain the buyer does not own —
+// which looks fine until a link preview comes up blank. Absent, empty, and
+// unparseable all land here, so the build log always says which one it was.
+if (
+  process.env.NODE_ENV === "production" &&
+  siteUrl === siteConfig.url.trim().replace(/\/+$/, "")
+) {
+  console.warn(
+    `[seo] Building with the placeholder URL ${siteUrl}. Set NEXT_PUBLIC_SITE_URL to the deployed origin and rebuild — note that NEXT_PUBLIC_* values are inlined at build time, so a redeploy that reuses the build cache keeps the old one.`,
+  );
+}
+
 /** Absolute URL for a site-relative path. */
 export function absoluteUrl(path = "/"): string {
   return path === "/" ? siteUrl : `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
