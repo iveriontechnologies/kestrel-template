@@ -97,8 +97,6 @@ it looks finished and nothing jumps.
 - [ ] Demo link at the top of both listings
 - [ ] Screenshots re-captured if you changed anything visual
 - [ ] Video recorded
-- [ ] `LICENSE.md` — one placeholder remains: **§13 governing law / jurisdiction**.
-      Search the file for `TO BE COMPLETED`.
 - [ ] `LICENSE.md` reviewed by a lawyer. The jurisdiction choice in §13 interacts with
       consumer-protection law wherever your buyers are, and §8, §9, and §11 are the
       clauses most likely to be tested.

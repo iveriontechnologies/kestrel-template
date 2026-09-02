@@ -221,12 +221,14 @@ prohibited by applicable law.
 ## 13. Governing Law
 
 This License shall be governed by and interpreted in accordance with the laws of
-**[JURISDICTION — TO BE COMPLETED]**, without regard to conflict-of-law
-principles.
+the Federal Republic of Nigeria, without regard to conflict-of-law principles.
 
 Any disputes arising from or relating to this License shall be subject to the
-applicable courts of **[JURISDICTION — TO BE COMPLETED]**, unless applicable law
+applicable courts of the Federal Republic of Nigeria, unless applicable law
 provides otherwise.
+
+Nothing in this Section deprives a consumer of the protection afforded to them by
+mandatory provisions of the law of the country in which they are resident.
 
 ## 14. Contact
 
