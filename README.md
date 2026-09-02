@@ -128,11 +128,13 @@ exactly two.
 
 ---
 
-## Licence
+## License
 
-Commercial licence — see [LICENSE.md](LICENSE.md). In short: use it for as many
-of your own projects as you like, do not resell or redistribute the template
-itself.
+Commercial license — see [LICENSE.md](LICENSE.md) for the full terms. In short:
+**you may sell websites and services built with the Template; you may not sell
+the Template itself.** One purchase covers unlimited sites, for you or your
+clients, on unlimited domains, with no attribution required.
 
 Geist Sans and Geist Mono are licensed separately under the SIL Open Font
-License 1.1; the full text is in [licenses/GEIST-OFL.txt](licenses/GEIST-OFL.txt).
+License 1.1. The full text is in [licenses/GEIST-OFL.txt](licenses/GEIST-OFL.txt)
+and must be retained where the fonts are redistributed.

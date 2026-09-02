@@ -97,7 +97,12 @@ it looks finished and nothing jumps.
 - [ ] Demo link at the top of both listings
 - [ ] Screenshots re-captured if you changed anything visual
 - [ ] Video recorded
-- [ ] `LICENSE.md` placeholders filled in, and the terms reviewed by a lawyer
+- [ ] `LICENSE.md` — two placeholders remain, both decisions only you can make:
+      **§13 governing law / jurisdiction** and **§14 contact email**. Search the file
+      for `TO BE COMPLETED`.
+- [ ] `LICENSE.md` reviewed by a lawyer. The jurisdiction choice in §13 interacts with
+      consumer-protection law wherever your buyers are, and §8, §9, and §11 are the
+      clauses most likely to be tested.
 - [ ] The zip excludes `context/`, `AGENTS.md`, `memory.md`, `marketing/`,
       `node_modules/`, and `.next/`
 - [ ] Numbers in `LISTING.md` still match what you measure today
