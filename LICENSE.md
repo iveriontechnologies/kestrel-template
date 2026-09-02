@@ -2,7 +2,7 @@
 
 **Effective Date:** 2 September 2026
 
-Copyright © 2026 Iverion Technologies. All rights reserved.
+Copyright © 2026 Israel Ahunanya. All rights reserved.
 
 By purchasing, downloading, accessing, or using Kestrel (the "Template"), you
 agree to the terms of this Commercial License (the "License").
@@ -10,7 +10,7 @@ agree to the terms of this Commercial License (the "License").
 ## 1. Grant of License
 
 Subject to your payment of the applicable purchase price and your compliance with
-this License, Iverion Technologies grants you a worldwide, non-exclusive,
+this License, Israel Ahunanya grants you a worldwide, non-exclusive,
 non-transferable, perpetual license to use, modify, and deploy the Template in
 accordance with the terms of this License.
 
@@ -42,7 +42,7 @@ Under this License, you may:
 - Remove the author's branding or attribution from websites you create with the
   Template.
 
-You are not required to credit Iverion Technologies on websites created using the
+You are not required to credit Israel Ahunanya on websites created using the
 Template.
 
 ## 3. Prohibited Use
@@ -82,9 +82,9 @@ the Template itself.**
 
 The Template is licensed, not sold.
 
-Iverion Technologies retains all right, title, and interest in and to the
-Template and its original components, including its design, source code,
-structure, documentation, and other original intellectual property.
+Israel Ahunanya retains all right, title, and interest in and to the Template and
+its original components, including its design, source code, structure,
+documentation, and other original intellectual property.
 
 This License grants you usage rights only and does not transfer ownership of the
 Template.
@@ -140,7 +140,7 @@ Unless otherwise stated on the product page or at the point of purchase, this
 License does not guarantee ongoing updates, maintenance, technical support,
 compatibility updates, bug fixes, or future versions of the Template.
 
-Any support, updates, or additional services provided by Iverion Technologies are
+Any support, updates, or additional services provided by Israel Ahunanya are
 subject to the terms stated at the time those services are offered.
 
 Your license to use a purchased version of the Template does not expire solely
@@ -151,9 +151,8 @@ because support or updates are discontinued.
 THE TEMPLATE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTIES OF ANY
 KIND, EXPRESS OR IMPLIED, TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW.
 
-IVERION TECHNOLOGIES DOES NOT WARRANT THAT THE TEMPLATE WILL BE ERROR-FREE,
-SECURE, COMPATIBLE WITH EVERY ENVIRONMENT, OR SUITABLE FOR EVERY PARTICULAR
-PURPOSE.
+ISRAEL AHUNANYA DOES NOT WARRANT THAT THE TEMPLATE WILL BE ERROR-FREE, SECURE,
+COMPATIBLE WITH EVERY ENVIRONMENT, OR SUITABLE FOR EVERY PARTICULAR PURPOSE.
 
 YOU ARE RESPONSIBLE FOR TESTING THE TEMPLATE IN YOUR OWN ENVIRONMENT AND FOR
 DETERMINING WHETHER IT IS SUITABLE FOR YOUR INTENDED USE.
@@ -163,13 +162,13 @@ LEGAL COMPLIANCE, AND PERFORMANCE OF WEBSITES YOU CREATE USING THE TEMPLATE.
 
 ## 9. Limitation of Liability
 
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IVERION TECHNOLOGIES SHALL NOT
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, ISRAEL AHUNANYA SHALL NOT
 BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR
 PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, DATA, BUSINESS, OR
 GOODWILL ARISING FROM OR RELATING TO THE TEMPLATE OR THIS LICENSE.
 
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE TOTAL LIABILITY OF IVERION
-TECHNOLOGIES ARISING OUT OF OR RELATING TO THE TEMPLATE OR THIS LICENSE SHALL NOT
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE TOTAL LIABILITY OF ISRAEL
+AHUNANYA ARISING OUT OF OR RELATING TO THE TEMPLATE OR THIS LICENSE SHALL NOT
 EXCEED THE AMOUNT ACTUALLY PAID BY YOU FOR THE TEMPLATE.
 
 NOTHING IN THIS LICENSE EXCLUDES OR LIMITS LIABILITY THAT CANNOT LAWFULLY BE
@@ -197,14 +196,14 @@ of purchase.
 Receiving a refund does not grant you any additional rights under this License.
 
 If a purchase is refunded, charged back, or otherwise reversed, your license to
-use the Template terminates unless Iverion Technologies expressly agrees
+use the Template terminates unless Israel Ahunanya expressly agrees
 otherwise in writing.
 
 ## 12. General Terms
 
-This License constitutes the entire agreement between you and Iverion
-Technologies concerning your licensed use of the Template and supersedes any
-conflicting licensing statements provided with the Template.
+This License constitutes the entire agreement between you and Israel Ahunanya
+concerning your licensed use of the Template and supersedes any conflicting
+licensing statements provided with the Template.
 
 Where the Template is purchased through a third-party marketplace or platform,
 that platform's own purchase and licensing terms may apply in addition to, or in
@@ -216,7 +215,7 @@ provision will be interpreted or limited to the minimum extent necessary, and th
 remaining provisions will continue in effect.
 
 You may not assign or transfer this License or your rights under it without the
-prior written consent of Iverion Technologies, except where such restriction is
+prior written consent of Israel Ahunanya, except where such restriction is
 prohibited by applicable law.
 
 ## 13. Governing Law
@@ -234,10 +233,10 @@ provides otherwise.
 Questions regarding this License or permitted uses of the Template should be
 directed to:
 
-Iverion Technologies
-Email: **[CONTACT EMAIL — TO BE COMPLETED]**
+Israel Ahunanya
+Email: iveriontechnologies@gmail.com
 
 ---
 
 Effective Date: 2 September 2026
-Copyright © 2026 Iverion Technologies. All rights reserved.
+Copyright © 2026 Israel Ahunanya. All rights reserved.
