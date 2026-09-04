@@ -127,7 +127,11 @@ comes from `siteConfig.name` — you do not need to edit it here.
 The same component renders in the header, the mobile menu, and the footer, so one
 edit covers all three.
 
-To change the favicon, replace `app/favicon.ico`.
+The favicon is `app/icon.svg` — the same mark, as a standalone file. A favicon is
+fetched outside the page, so it cannot read `--accent` from `globals.css`; the
+colour is written literally in that file. Change it in both places, or the tab
+icon drifts from the header. Drop in an `.ico` or `.png` named `icon` instead if
+you would rather not hand-edit SVG.
 
 ---
 

@@ -47,3 +47,6 @@ next-env.d.ts
 
 # throwaway browser profile used by marketing/capture.mjs
 marketing/.capture-profile/
+
+# Buyer deliverable, built by hand — never committed.
+*.zip
