@@ -22,6 +22,10 @@ Template or its underlying intellectual property.
 
 ## 2. Permitted Use
 
+In this License, an **"End Product"** means a website or web application you
+build using the Template, customized for a specific purpose, and not offered to
+others as a template, theme, starter kit, or other reusable development product.
+
 Under this License, you may:
 
 - Use the Template as the basis for unlimited websites for yourself, your
@@ -37,6 +41,13 @@ Under this License, you may:
   independent contractors when reasonably necessary to develop, maintain, or
   customize a permitted website, provided those individuals do not independently
   use, sell, sublicense, or redistribute the Template.
+- Deliver a completed End Product to the client it was built for, including its
+  source files, and transfer that End Product to them. The client may host,
+  operate, maintain, and modify that End Product indefinitely. The client does
+  not receive a license to the Template itself, and may not use it for any other
+  project or redistribute it; to do either, they need their own license.
+- Store the Template and your work on it in a private repository, including one
+  shared with your team or with a client for a project permitted above.
 - Continue using websites created with the Template indefinitely, including after
   any support period has ended.
 - Remove the author's branding or attribution from websites you create with the
@@ -62,7 +73,9 @@ You may not:
   source code to a template marketplace, code marketplace, repository intended
   for public distribution, or similar platform.
 - Publish the Template's source code in a public Git repository, gist,
-  file-sharing service, or other publicly accessible location.
+  file-sharing service, or other publicly accessible location. Private
+  repositories are permitted under Section 2 — this restriction is about making
+  the Template's source obtainable by people who have not licensed it.
 - Include the Template's source files as downloadable assets in a course,
   tutorial, membership, bundle, repository, or other product.
 - Share the Template with third parties for purposes unrelated to creating,

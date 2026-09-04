@@ -100,40 +100,37 @@ the log rather than by guessing at a CDN.
 Still to do: put the demo link at the very top of both listings. For a template,
 the live demo does more selling than any screenshot.
 
-## Still outstanding
+## The video
 
-### Scroll-through video
+Recorded, and it runs over a minute. That is fine — a template listing is not an
+ad, and a buyer who clicks play is already interested enough to watch a build
+scroll. Two things matter more than the total length:
 
-Not done — it needs a screen recording, which I cannot produce.
+- **The first ten seconds.** Most platforms show the opening frame as the poster
+  and most viewers decide inside that window. Open on the hero at the top of the
+  home page in dark, already painted — not on an editor, a terminal, or a fade-in.
+- **Nothing that dates it.** No visible clock, no browser profile or bookmarks
+  bar, no notification. Those are what make a listing video look old in six
+  months.
 
-Suggested shape, about 20 seconds:
-
-1. Home, top of page, dark. Pause a beat on the hero and the dashboard mockup.
-2. Scroll steadily to the footer, slowly enough that the section reveals read as
-   deliberate rather than as jitter.
-3. Click the theme toggle. Let the light theme sit for two seconds.
-4. Cut to `/pricing`, toggle monthly → annual so the prices animate.
-5. Cut to a blog post, scroll past the table and the code block.
-
-Record at 1440×900 and export at 1280×720. No captions needed — the point is that
-it looks finished and nothing jumps.
+If a platform rejects it on length, trim rather than re-shoot: the theme toggle
+and the pricing monthly/annual switch are the two moments worth keeping, and
+everything between them can be cut.
 
 ---
 
 ## Before you publish the listing
 
 - [x] Demo deployed, and `NEXT_PUBLIC_SITE_URL` set on the host
-- [ ] Demo link at the top of both listings
+- [x] Demo link at the top of both listings
 - [ ] Screenshots re-captured if you changed anything visual
-- [ ] Video recorded
-- [ ] `LICENSE.md` reviewed by a lawyer. The jurisdiction choice in §13 interacts with
-      consumer-protection law wherever your buyers are, and §8, §9, and §11 are the
-      clauses most likely to be tested.
-- [ ] If **Iverion Technologies** is registered as a company before launch, decide
-      whether to keep licensing personally or assign the copyright to the entity and
-      reissue the licence in its name. The licensor is currently Israel Ahunanya, the
-      natural person who holds the copyright — which is correct while the company is
-      unregistered.
+- [x] Video recorded
+- [x] `LICENSE.md` complete — 14 sections, no placeholders, and it now covers the two
+      cases a buyer actually hits: delivering a finished site to the client it was
+      built for, and keeping the work in a private repository.
+- [ ] If **Iverion Technologies** is registered before launch, decide whether to
+      reissue the licence in the company's name. It currently names Israel Ahunanya,
+      which is right while the company is unregistered.
 - [ ] The zip excludes `context/`, `AGENTS.md`, `memory.md`, `marketing/`,
       `node_modules/`, and `.next/`
 - [ ] Numbers in `LISTING.md` still match what you measure today

@@ -2,6 +2,10 @@
 
 Paste-ready copy for Gumroad and Creative Market, plus the shared feature list.
 
+**Live demo: https://kestrel-template.vercel.app** — it belongs at the top of both
+listings and in the first line of the description. For a template, the demo does
+more selling than any screenshot.
+
 **Every number in here was measured, not estimated.** If you change the template
 before listing it, re-measure before you republish — an inflated Lighthouse score
 in a listing is the kind of thing buyers check.
@@ -27,6 +31,8 @@ in a listing is the kind of thing buyers check.
 `Kestrel — Next.js 16 Landing Page Template`
 
 ### Description
+
+**Live demo → https://kestrel-template.vercel.app**
 
 Most landing page templates look good in the screenshots and fight you the moment
 you open them. Kestrel is built the other way round: **every user-facing string on
@@ -91,6 +97,8 @@ substance, different shape.
 
 ### Opening paragraph
 
+**Live demo → https://kestrel-template.vercel.app**
+
 > Launch a landing page that looks like it took a month, in an afternoon. Kestrel
 > is a complete Next.js 16 template for SaaS and developer tools — six pages, an
 > MDX blog, and a light and dark theme that are both finished. Rebranding it means
@@ -126,6 +134,7 @@ Node.js 20.9 or newer. Any code editor. No design software needed.
 Reusable anywhere a short list is wanted.
 
 ```
+✓ Live demo: https://kestrel-template.vercel.app
 ✓ Six complete pages — home, pricing, blog, post, changelog, 404
 ✓ One typed config file holds every word on the site
 ✓ Light and dark themes, both complete, both WCAG AA
