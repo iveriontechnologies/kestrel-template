@@ -117,6 +117,23 @@ If a platform rejects it on length, trim rather than re-shoot: the theme toggle
 and the pricing monthly/annual switch are the two moments worth keeping, and
 everything between them can be cut.
 
+## The favicon
+
+`app/icon.svg` is the mark; `app/favicon.ico` is the same mark at 16, 32 and
+48px, generated from it by `make-ico.mjs`. Regenerate after any change to the
+mark:
+
+```bash
+node marketing/make-ico.mjs
+```
+
+The `.ico` exists because the `<link>` tag is not the whole story — some clients
+request `/favicon.ico` by convention and ignore the tag, and that path used to
+404. The script renders the SVG through the same headless browser the
+screenshots use and packs PNG-compressed entries into a real ICO container, so
+nothing needs installing and the two files cannot drift apart. 2,337 bytes, next
+to create-next-app's 25,931.
+
 ## Building the buyer's zip
 
 Built from `git archive`, not from a copy of the working directory — that way

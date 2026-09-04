@@ -130,8 +130,20 @@ edit covers all three.
 The favicon is `app/icon.svg` — the same mark, as a standalone file. A favicon is
 fetched outside the page, so it cannot read `--accent` from `globals.css`; the
 colour is written literally in that file. Change it in both places, or the tab
-icon drifts from the header. Drop in an `.ico` or `.png` named `icon` instead if
-you would rather not hand-edit SVG.
+icon drifts from the header.
+
+`app/favicon.ico` sits alongside it, holding the same mark at 16, 32 and 48px.
+Modern browsers take the SVG; the `.ico` is for the clients that ignore the
+`<link>` tag and request `/favicon.ico` directly — older Safari, and a number of
+link-preview and feed bots. **After you change the mark, regenerate it:**
+
+```bash
+node marketing/make-ico.mjs
+```
+
+That renders `icon.svg` through a headless browser and repacks the `.ico`, so
+the two cannot drift. If you would rather not hand-edit SVG at all, delete both
+and drop in your own `icon.png` — Next.js picks it up by filename.
 
 ---
 
