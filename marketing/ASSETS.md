@@ -117,13 +117,36 @@ If a platform rejects it on length, trim rather than re-shoot: the theme toggle
 and the pricing monthly/annual switch are the two moments worth keeping, and
 everything between them can be cut.
 
+## Building the buyer's zip
+
+Built from `git archive`, not from a copy of the working directory — that way
+nothing untracked or ignored can leak in, which is how `node_modules/` and stray
+`.env` files end up in template downloads.
+
+```bash
+git archive HEAD | tar -x -C /tmp/kestrel
+rm -rf /tmp/kestrel/context /tmp/kestrel/marketing        /tmp/kestrel/AGENTS.md /tmp/kestrel/memory.md
+# then zip /tmp/kestrel so it unpacks to a single kestrel/ folder
+```
+
+`.gitignore` and `.env.example` stay in — buyers need both. `*.zip` is
+gitignored, so the deliverable is never committed.
+
+**Verify before you upload.** Extract the zip somewhere clean and run
+`npm ci && npm run build`. `npm ci` fails outright if `package.json` and
+`package-lock.json` disagree, which is the first thing a buyer would hit, and
+the build proves the shipped tree stands on its own. Current zip: 84 entries,
+166 KB, verified at v1.0.0.
+
 ---
 
 ## Before you publish the listing
 
 - [x] Demo deployed, and `NEXT_PUBLIC_SITE_URL` set on the host
 - [x] Demo link at the top of both listings
-- [ ] Screenshots re-captured if you changed anything visual
+- [x] Screenshots re-captured if you changed anything visual — nothing visual has
+      changed since the shoot. The favicon was replaced, but no screenshot shows a
+      browser tab.
 - [x] Video recorded
 - [x] `LICENSE.md` complete — 14 sections, no placeholders, and it now covers the two
       cases a buyer actually hits: delivering a finished site to the client it was
@@ -131,6 +154,10 @@ everything between them can be cut.
 - [ ] If **Iverion Technologies** is registered before launch, decide whether to
       reissue the licence in the company's name. It currently names Israel Ahunanya,
       which is right while the company is unregistered.
-- [ ] The zip excludes `context/`, `AGENTS.md`, `memory.md`, `marketing/`,
-      `node_modules/`, and `.next/`
-- [ ] Numbers in `LISTING.md` still match what you measure today
+- [x] The zip excludes `context/`, `AGENTS.md`, `memory.md`, `marketing/`,
+      `node_modules/`, and `.next/` — build it with the recipe below rather than by
+      hand, and it cannot go wrong twice.
+- [x] Numbers in `LISTING.md` still match what you measure today — re-measured
+      4 September 2026: home 358 KiB (was 383, the difference is the 25 KiB
+      default favicon we dropped), performance 93–95, accessibility, best
+      practices and SEO 100 on every page, CLS 0.

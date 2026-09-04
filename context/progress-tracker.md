@@ -6,9 +6,13 @@ Update this file after every completed feature. Any agent reading it should imme
 
 ## Current Status
 
-**Phase:** Phase 5 — Ship
-**Last completed:** 23 Marketplace assets — **build complete except the demo deployment and the video, both of which need you**
-**Next:** nothing queued
+**Phase:** Post-build — ready to list
+**Last completed:** 23 Marketplace assets. All 23 features done. Since then: demo
+deployed and verified, licence gaps closed, favicon replaced, buyer zip built and
+verified, version set to 1.0.0, listing numbers re-measured.
+**Next:** nothing queued. One open decision belongs to Israel, not to an agent —
+whether to reissue the licence in a company name if Iverion Technologies is
+registered before launch. The pre-publish checklist lives in `marketing/ASSETS.md`.
 
 ---
 
@@ -50,23 +54,43 @@ Update this file after every completed feature. Any agent reading it should imme
 - [x] 20 Responsive and theme QA
 - [x] 21 Performance pass
 - [x] 22 Documentation and license
-- [x] 23 Demo deployment and marketplace assets — *assets and copy done; deploy and video outstanding, see `marketing/ASSETS.md`*
+- [x] 23 Demo deployment and marketplace assets — *complete. Demo live at https://kestrel-template.vercel.app, video recorded, zip built.*
 
 ---
 
 ## Decisions Made During Build
 
-**23 — Screenshots are captured with headless Edge, not a browser automation library.**
-The in-app browser pane scales an emulated viewport into a smaller window, which made every capture above ~640px wide unusable for marketing — a problem that cost time across several features. Playwright wanted a Chrome install that is not on this machine. `msedge --headless=new --screenshot --window-size=W,H` needs nothing installed and produces exact-pixel captures against the production build. The command is written down in `marketing/ASSETS.md` so the set can be regenerated after any visual change.
+**Post-build — `NEXT_PUBLIC_SITE_URL` resolution was rewritten, then made to announce itself.**
+The Vercel build died on `TypeError: Invalid URL, input: ''`. The cause was mine: `process.env.NEXT_PUBLIC_SITE_URL ?? siteConfig.url`. `??` falls back on null and undefined only, so an env var *defined with an empty value* passed `""` straight to `new URL()`. Feature 19 verified the variable set and unset, never set-to-empty. `resolveSiteUrl()` now walks candidates in order, warns on present-but-empty, prefixes a bare host with `https://`, and throws only when nothing is usable. Verified against six cases: empty, unset, bare host, unparseable, trailing slash, valid.
 
-**23 — Light-theme captures need a temporary `defaultTheme` flip.**
-A headless capture renders before any script sets a theme preference, so it always gets the default. Three of the twelve screenshots were taken with `defaultTheme="light"` in the layout, then the flag was reverted and the site rebuilt. Recorded in `ASSETS.md` because it is not obvious and will be needed again.
+A second, quieter problem followed: the live site kept serving placeholder canonicals and no request from outside could force a CDN miss (`X-Vercel-Cache: HIT`, `Age: 138967`), so stale-cache and stale-build were indistinguishable remotely. The fix was to make the build say which it is — a production build that falls back to the placeholder now logs it. The variable was set correctly all along; the redeploy had reused the build cache, and `NEXT_PUBLIC_*` is inlined at build time.
+
+**Post-build — the licence let buyers build client sites but never let them deliver one.**
+§2 permitted building for clients and charging; §3 forbade providing source files to a client "except as expressly permitted under Section 2"; and §2 permitted only *temporary* contractor access. A freelancer following it literally could not hand over the finished site, which contradicts the listing's "unlimited projects, yours and your clients'." §2 now defines an **End Product** and permits transferring one to the client it was built for, without granting them the Template. Separately, §3 banned publishing the source publicly without ever saying private repositories were fine, so a buyer using GitHub had to guess. Both stated plainly.
+
+**Post-build — the favicon was still create-next-app's.**
+25,931 bytes of the Next.js logo, live on the demo and bound for every buyer. Replaced with `app/icon.svg`, the same mark as `Logo.tsx`. Its accent is written literally, because a favicon is fetched outside the page and cannot read `--accent`; `SETUP.md` says to change both. `public/` also still held `next.svg`, `vercel.svg`, `window.svg`, `globe.svg` and `file.svg`, none referenced. Removing them and the `.ico` took the home page from 383 KiB to 358.
+
+**Post-build — the buyer's zip is built from `git archive`, not from a copy of the directory.**
+A directory copy can pick up anything untracked or ignored, which is how `node_modules/` and stray `.env` files end up in template downloads. `git archive HEAD` emits exactly the tracked tree; the four build-time paths are then deleted. Verified by extracting the result and running `npm ci && npm run build` — `npm ci` aborts if `package.json` and the lockfile disagree, which is the first thing a buyer would hit. Recipe in `marketing/ASSETS.md`.
+
+**Post-build — seven shipped comments cited context docs that do not ship.**
+`MockLineChart.tsx` pointed at `code-standards.md`, `Field.tsx` and `FinalCta.tsx` at `ui-tokens.md`, `utils.ts` and `PricingTiers.tsx` at `ui-rules.md`, `globals.css` at `ui-tokens.md`, and a public SVG at `progress-tracker.md`. Each now states the fact rather than citing a file the reader does not have. Worth watching for in future edits: a comment that is right for us can be a dead end for the buyer.
+
+**Post-build — one Lighthouse run is not a measurement.**
+Re-measuring the listing's numbers, the first home-page run scored **76** on a machine that had just finished two npm builds. Three consecutive runs then gave 93, 94, 94. The listing now records the date, the method, and that performance is a median of three — and the 76 is written down, because the temptation on seeing it was to accept it or to re-run until it looked good, and neither is measurement.
+
+**23 — Screenshots are captured over the DevTools protocol, by `marketing/capture.mjs`.**
+Superseded the original `msedge --screenshot` approach, which produced bad assets three ways. The flag subtracts window chrome from the requested size (asking for 1440 gives 1414) and enforces a minimum width near 496px, so a 390px mobile shot rendered at 496 and was cropped — headlines cut mid-word. It also captures on load, before the IntersectionObserver runs, so everything below the hero came out blank at `opacity: 0`. And a force-installed browser extension painted a badge into every frame, which a fresh profile did not stop. CDP sets device metrics exactly, `Emulation.setEmulatedMedia` forces `prefers-reduced-motion` so the stylesheet paints every section at first paint with no JavaScript, and `--disable-extensions` clears the badge. 15 shots, one pass.
+
+**23 — Light-theme captures no longer need a `defaultTheme` flip.**
+The earlier method required editing `app/layout.tsx` and rebuilding between themes. `capture.mjs` seeds `localStorage` through `Page.addScriptToEvaluateOnNewDocument`, so next-themes reads the intended theme on its first pass. Both themes now come out of one run, with no source edit and no flash.
 
 **23 — The listing copy carries a "claims to avoid" section.**
-Performance measures 92–97, not 100, and the listing says so. Also ruled out: "fully accessible" (contrast, targets, focus, and heading order were tested — that is not a full WCAG audit by a specialist), ranking promises, and lifetime updates. A template listing that overstates its Lighthouse scores is trivially checked by the buyer.
+Performance measures 93–95, not 100, and the listing says so. Also ruled out: "fully accessible" (contrast, targets, focus, and heading order were tested — that is not a full WCAG audit by a specialist), ranking promises, and lifetime updates. A template listing that overstates its Lighthouse scores is trivially checked by the buyer.
 
-**23 — Deployment and the video are not done, deliberately.**
-The deployment was excluded by request. The video needs a screen recording. `marketing/ASSETS.md` carries the shot list for it and the post-deploy checklist, including the one thing easy to forget: `NEXT_PUBLIC_SITE_URL` must be set on the host or every canonical and the whole sitemap point at `kestrel.example.com`.
+**23 — Deployment and the video are done.**
+Both were Israel's to do and both are done. Demo live at https://kestrel-template.vercel.app, verified route by route. Video recorded, over a minute, which is fine for a template listing.
 
 **22 — `/tokens` is deleted, and the two references to it went with it.**
 Outstanding since feature 01. Removing the route also meant removing the `Disallow: /tokens` line from `robots.ts` and a stale comment in `sitemap.ts` — a deleted page leaves rules behind that quietly outlive it.
@@ -364,8 +388,8 @@ Production console warns `GeistMono_Variable.woff2 was preloaded using link prel
 **Pre-existing lint error in `ThemeToggle.tsx`.**
 `npx eslint` fails on `useEffect(() => setMounted(true), [])` with `react-hooks/set-state-in-effect`. It predates feature 12 and does not surface in `next build`, which is why it was missed. The mounted guard itself is correct and documented in `ui-registry.md` — the fix is `useSyncExternalStore` or an equivalent, not removing the guard. **Feature 21 should resolve it**, since a paid template that fails its own lint is a defect a buyer will notice on first commit.
 
-**Feature 23 must exclude the build-time files from the buyer's package.**
-`context/`, `AGENTS.md`, and `memory.md` are all in the repository root and none of them belong in a zip a buyer downloads — `architecture.md` already says `context/` never ships. The packaging step needs an explicit include list or a `.npmignore`-style exclusion, not a "select all".
+**~~Feature 23 must exclude the build-time files from the buyer's package.~~ Done.**
+Resolved post-build: the zip is produced from `git archive HEAD` with `context/`, `marketing/`, `AGENTS.md` and `memory.md` deleted afterwards, which also rules out untracked and ignored files by construction. Recipe and verification steps in `marketing/ASSETS.md`.
 
 **Deferred to feature 19 — per-page metadata through `lib/seo.ts`.**
 `app/pricing/page.tsx` exports a minimal `metadata` from `pages.pricing.metaTitle` / `metaDescription`, which satisfies "every route exports metadata" and picks up the root's title template. Canonical, OpenGraph, and Twitter fields are feature 19's job and should replace this object rather than sit beside it.

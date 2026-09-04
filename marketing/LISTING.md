@@ -10,6 +10,11 @@ more selling than any screenshot.
 before listing it, re-measure before you republish — an inflated Lighthouse score
 in a listing is the kind of thing buyers check.
 
+Last measured **4 September 2026**, against a production build (`npm run build`
+then `next start -p 3100`) with Lighthouse 12 on its default mobile preset.
+Performance is the median of three consecutive runs — a single run on a busy
+machine came in at 76, so one run is not a measurement.
+
 ---
 
 ## Short description (one line)
@@ -52,7 +57,7 @@ being the Next.js default.
   every colour pair clears WCAG AA in both — measured, not assumed.
 - **Deliberately light.** No chart library, no animation library, no analytics.
   The dashboard mockup is hand-written SVG; the scroll reveals are 60 lines of
-  IntersectionObserver. The home page is 383 KiB on the wire.
+  IntersectionObserver. The home page is 358 KiB on the wire.
 - **A real MDX pipeline.** Blog and changelog, frontmatter validated with zod so a
   typo fails the build and names the file, drafts hidden in production, read time
   calculated from the body so there is nothing to keep in sync.
@@ -69,9 +74,9 @@ being the Next.js default.
 | Lighthouse accessibility | 100 |
 | Lighthouse best practices | 100 |
 | Lighthouse SEO | 100 |
-| Lighthouse performance | 92–97 depending on page |
+| Lighthouse performance | 93–95 depending on page |
 | Cumulative layout shift | 0 |
-| Home page weight | 383 KiB |
+| Home page weight | 358 KiB |
 
 **What you receive**
 
@@ -165,7 +170,7 @@ Say it plainly somewhere in the listing. Buyers appreciate it, and it protects y
 
 Do not write these. Each one is either untrue or unverifiable.
 
-- ~~"100 Lighthouse scores"~~ — performance measures 92–97, not 100. Say what it is.
+- ~~"100 Lighthouse scores"~~ — performance measures 93–95, not 100. Say what it is.
 - ~~"Fully accessible"~~ — contrast, targets, focus, and heading order were tested.
   That is not the same as an audit of the whole WCAG spec by a specialist.
 - ~~"SEO optimised — rank #1"~~ — the metadata is complete. Rankings are not yours
