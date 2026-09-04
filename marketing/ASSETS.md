@@ -71,24 +71,38 @@ It also removes a manual step: light-mode shots used to need `defaultTheme`
 flipped in `app/layout.tsx` and a rebuild. The script seeds `localStorage`
 before the page's own scripts run, so both themes come out of one pass.
 
+## The demo
+
+Live at **https://kestrel-template.vercel.app**.
+
+Verified against the deployment: all six routes return 200, `/no-such-page`
+returns a real 404, the blog index lists six posts, and `/opengraph-image`
+serves a 60 KB PNG. Canonicals, `og:url`, `og:image`, the `robots.txt` sitemap
+line, and all ten sitemap `<loc>` entries carry the deployed origin.
+
+`NEXT_PUBLIC_SITE_URL` is set in the Vercel project's environment variables.
+Two things about that variable are worth remembering, because both bit us:
+
+- **`.env.example` is documentation, nothing more.** Next.js loads `.env`,
+  `.env.local`, `.env.production` and `.env.development` — never `.env.example`,
+  and a host reads none of them. Editing it changes no build anywhere. Keep the
+  placeholder in it so a buyer who copies it to `.env.local` and forgets to edit
+  gets an obviously-fake domain rather than this demo's.
+- **`NEXT_PUBLIC_*` values are inlined at build time.** A redeploy that reuses
+  the build cache keeps whatever value was baked in when that cache was made, so
+  changing the variable and redeploying with the cache on appears to do nothing.
+  Untick *Use existing Build Cache*, or push a commit.
+
+Any production build that falls back to the placeholder now says so in the build
+log (`[seo] Building with the placeholder URL …`), so this is diagnosable from
+the log rather than by guessing at a CDN.
+
+Still to do: put the demo link at the very top of both listings. For a template,
+the live demo does more selling than any screenshot.
+
 ## Still outstanding
 
-Two items from the build plan that need you.
-
-### 1. Deploy the demo
-
-Not done — you asked to handle deployment yourself. Once it is live:
-
-- Set `NEXT_PUBLIC_SITE_URL` to the demo's real URL in the host's environment
-  variables. Without it the sitemap and every canonical point at
-  `kestrel.example.com`, which is the placeholder in `site.config.ts`.
-- Walk every page in both themes on the deployed URL before linking to it from a
-  listing. Everything was verified locally against a production build, but a
-  deployment is its own environment.
-- Put the demo link at the very top of both listings. For a template, the live
-  demo does more selling than any screenshot.
-
-### 2. Scroll-through video
+### Scroll-through video
 
 Not done — it needs a screen recording, which I cannot produce.
 
@@ -108,7 +122,7 @@ it looks finished and nothing jumps.
 
 ## Before you publish the listing
 
-- [ ] Demo deployed, and `NEXT_PUBLIC_SITE_URL` set on the host
+- [x] Demo deployed, and `NEXT_PUBLIC_SITE_URL` set on the host
 - [ ] Demo link at the top of both listings
 - [ ] Screenshots re-captured if you changed anything visual
 - [ ] Video recorded
