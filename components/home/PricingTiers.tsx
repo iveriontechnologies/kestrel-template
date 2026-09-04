@@ -82,7 +82,8 @@ function TierCard({
                 $
               </span>
               <span
-                // Remounting on toggle lets the fade replay. 150ms per ui-rules.
+                // Remounting on toggle lets the fade replay, at the 150ms the rest
+                // of the site uses for state changes (HOVER_DURATION_MS).
                 key={annual ? "annual" : "monthly"}
                 className="text-[44px] font-semibold leading-none tracking-[-0.03em] text-fg animate-in fade-in duration-150"
               >

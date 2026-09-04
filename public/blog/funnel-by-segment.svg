@@ -6,7 +6,7 @@
     Colours are deliberately mid-tone hex rather than theme tokens: this file is
     loaded through <img>, so it cannot inherit currentColor or the .dark class.
     Each value sits between the light and dark palette so the figure reads on
-    both backgrounds. See progress-tracker.md, feature 14.
+    both backgrounds. Replace this file and keep that constraint in mind.
   -->
   <g font-family="system-ui, -apple-system, Segoe UI, sans-serif">
     <text x="0" y="26" font-size="26" font-weight="600" fill="#8a8a99">Checkout funnel, by platform</text>

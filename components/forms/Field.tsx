@@ -10,8 +10,9 @@ import { cn } from "@/lib/utils";
  * rather than wrapped in a component because the two forms need different
  * elements and different props, and only the surface has to match.
  *
- * Values are the input spec in `ui-tokens.md`. The focus ring replaces the
- * global focus outline, which is why `outline-none` is safe here.
+ * These values are the single input spec for the whole site — change them here
+ * and every control follows. The focus ring replaces the global focus outline,
+ * which is why `outline-none` is safe here.
  */
 export const CONTROL = cn(
   // min-h rather than h: the textarea grows past it, and 44px is both the

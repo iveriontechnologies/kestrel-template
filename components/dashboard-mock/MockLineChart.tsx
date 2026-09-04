@@ -9,7 +9,8 @@ const HEIGHT = 176;
 const GRID_LINES = 4;
 
 /**
- * Hand-written SVG. No chart library — see code-standards.md.
+ * Hand-written SVG. The template ships no chart library on purpose — this is
+ * the entire chart, and it is the only one you have to maintain.
  *
  * Everything paints with currentColor so the chart inherits whichever chart
  * token the parent sets, which is what lets a buyer change --accent and have

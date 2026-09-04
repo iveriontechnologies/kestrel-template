@@ -212,7 +212,8 @@
 
 @layer components {
   /* Faint grid behind the hero and CTA bands. Masked so it fades out
-     rather than ending on a hard edge. Spec: ui-tokens.md. */
+     rather than ending on a hard edge, which is what keeps it from reading
+     as a texture pasted on top of the section. */
   .bg-grid {
     background-image:
       linear-gradient(var(--grid-line) 1px, transparent 1px),

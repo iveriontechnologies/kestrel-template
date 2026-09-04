@@ -15,8 +15,8 @@ type Props = {
  * Full-bleed closing band. Like the hero, this does not use `Section` — it
  * needs an edge-to-edge background layer.
  *
- * Carries the grid but deliberately no glow: ui-tokens.md allows exactly one
- * glow per page, and the hero owns it.
+ * Carries the grid but deliberately no glow: the design allows exactly one glow
+ * per page, and the hero owns it. Two competing glows read as a mistake.
  */
 export function FinalCta({ headline, subheadline, cta }: Props) {
   return (

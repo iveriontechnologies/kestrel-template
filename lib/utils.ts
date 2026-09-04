@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]): string {
   return twMerge(clsx(inputs));
 }
 
-/** Breakpoints. Mirrors the three tiers in ui-rules.md. */
+/** The three tiers every layout in the template is designed around. */
 export const BREAKPOINTS = { mobile: 768, tablet: 1024 } as const;
 
 /** Motion timings. Only these two durations exist in the design. */
