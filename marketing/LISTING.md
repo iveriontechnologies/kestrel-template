@@ -124,6 +124,10 @@ Drop in your own logo. It is one SVG in one component.
 or for clients, charge whatever you charge, hand the finished site over to the
 client — you just cannot resell Kestrel itself.
 
+**On refunds:** there are none. The demo is the entire template, deployed and
+public, so you can click through every page in both themes before you spend
+anything. Nothing is hidden behind the purchase. Please do look first.
+
 Node 20.9 or newer. Deploys to Vercel in a click, or anywhere that runs a
 Next.js build.
 
@@ -148,7 +152,7 @@ transcription, not decisions.
 | Description | The Gumroad description above, demo link on the first line |
 | Category | Software & Development, or Design if that reads better to you |
 | Tags | `nextjs`, `react`, `tailwind`, `landing-page`, `saas`, `template`, `typescript`, `mdx` |
-| Refund policy | Whatever you choose — §11 of the licence defers to it, so they cannot conflict |
+| Refund policy | **No refunds.** See the note below before you set it |
 | Content rating | All audiences |
 
 **Gallery order matters more than the count.** Six is plenty. Lead with the dark
@@ -186,6 +190,24 @@ price should come from the real list price and nothing else — it is the one
 claim in a listing a buyer can check in a second, and on a listing that measures
 everything else honestly it would cost more trust than the discount buys.
 
+**About the no-refund policy.** Set it, but know what it does and does not do.
+
+It sets expectations, and paired with a public demo that is genuinely the whole
+product it is defensible. What it does not do is stop money going back out.
+Gumroad can refund a buyer over your head under its own terms, and a card
+chargeback is between the buyer and their bank — your policy is not part of that
+conversation. The licence already handles the outcome: §11 terminates the licence
+if a purchase is refunded or reversed, so someone cannot keep the rights and the
+money both.
+
+Two more things I would check rather than assume. Buyers in the EU and UK have a
+statutory withdrawal right on digital purchases that a seller's policy cannot
+simply switch off, though it can usually be waived at checkout if the buyer
+consents to immediate download; Gumroad handles some of this for you and it is
+worth seeing how. And on Creative Market I am not certain the refund policy is
+the seller's to set at all — check before you assume it carries over. Neither of
+these is a reason to change your mind, they are just the shape of it.
+
 **Before you hit publish**
 
 - Open the demo link from the description in a private window. It is the first
@@ -196,8 +218,9 @@ everything else honestly it would cost more trust than the discount buys.
 
 ## Creative Market
 
-Creative Market rewards a benefit-led opening and a scannable list. Same
-substance, different shape.
+Shorter than the Gumroad copy, because Creative Market's layout truncates a long
+opening. Same voice: plain sentences, no bolded lead-ins, nothing claimed that
+was not measured.
 
 ### Title
 
@@ -205,31 +228,46 @@ substance, different shape.
 
 ### Opening paragraph
 
-**Live demo → https://kestrel-template.vercel.app**
+Live demo → https://kestrel-template.vercel.app
 
-> Launch a landing page that looks like it took a month, in an afternoon. Kestrel
-> is a complete Next.js 16 template for SaaS and developer tools — six pages, an
-> MDX blog, and a light and dark theme that are both finished. Rebranding it means
-> editing one config file and one colour, not hunting through components.
+> Kestrel is a Next.js 16 landing page template for SaaS and developer tools.
+> Six pages, all finished: home, pricing, blog, blog post, changelog, and a 404
+> that looks like the rest of the site. Every word on the site lives in one
+> config file and every colour lives in one CSS file, so rebranding it is an
+> afternoon of editing two files rather than a week of hunting through
+> components. The demo above is the template itself, deployed. Look at that
+> before you read anything else.
 
 ### Highlights
 
-- Six complete pages: home, pricing, blog, blog post, changelog, 404
-- Ten home page sections, including a hand-built dashboard mockup that rethemes
-  with your brand colour
-- MDX blog and changelog with validated frontmatter and automatic read time
-- Light and dark, both complete, both clearing WCAG AA contrast
-- Newsletter and contact forms with validation and clearly marked wiring points
-- Full SEO: canonicals, OpenGraph, generated OG image, sitemap, robots, JSON-LD
-- Self-hosted Geist fonts — nothing phones home
-- No chart library, no animation library, no tracking
+- Six pages, ten home page sections
+- A dashboard mockup drawn in SVG by hand, which rethemes with your brand colour
+- MDX blog and changelog. Frontmatter is validated, so a typo fails the build
+  and names the file
+- Light and dark, both finished, both clearing WCAG AA contrast
+- Newsletter and contact forms that work, with two marked places to plug in your
+  provider
+- Canonicals, OpenGraph, a generated OG image, sitemap, robots, JSON-LD
+- Self-hosted fonts. No analytics, no tracking, no third-party requests
+- No chart library and no animation library. 358 KiB on the wire
 
 ### What's included
 
-- Complete source code (Next.js 16, React 19, TypeScript, Tailwind CSS v4)
-- Six sample blog posts and four changelog entries
-- README and a step-by-step setup guide
-- Commercial licence for unlimited personal and client projects
+- Full source: Next.js 16, React 19, TypeScript in strict mode, Tailwind CSS v4
+- Six sample blog posts and four changelog entries, so the layouts are not empty
+- A setup guide that goes from clone to deployed in about half an hour
+- Commercial licence covering your own projects and client work
+
+### Measured on a production build
+
+Accessibility 100, best practices 100, SEO 100. Performance sits between 93 and
+95 depending on the page, and cumulative layout shift is 0. Performance is not
+100 and the listing does not say it is.
+
+### What you will still have to do
+
+Replace the demo content, which is invented. Connect the two forms to your
+provider. Drop in your own logo, which is one SVG in one component.
 
 ### Software required
 
