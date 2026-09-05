@@ -101,7 +101,7 @@ transcription, not decisions.
 | Product type | Digital product |
 | Name | `Kestrel — Next.js 16 Landing Page Template` |
 | URL slug | `kestrel` (or `kestrel-nextjs-template` if taken) |
-| Price | **$39** |
+| Price | **$59** list, with a discount to **$39** — see below |
 | Cover / thumbnail | `marketing/thumbnail.png` |
 | Gallery images | `marketing/screenshots/01, 03, 05, 07, 08, 12` in that order |
 | Video | Yours. Put it first if Gumroad lets you order it above the images |
@@ -119,17 +119,34 @@ template is complete rather than a hero and filler. The full-page shots
 (`02`, `04`) are better linked from the description than dropped in the gallery,
 where their aspect ratio makes every other thumbnail small.
 
-**Price: $39.** Decided 5 September 2026.
+**Price: $59 list, discounted to $39.** Decided 5 September 2026, before the
+first sale — which is the right order, because raising a list price after a
+product has sales is the awkward direction.
 
-If you want the struck-through-price effect later, Gumroad does it by raising the
-list price and adding a discount — not by editing the number. Raising it on a
-product that already has sales is the awkward direction, so if a launch discount
-appeals at all, set the list price higher *before* the first sale and discount
-down to 39. Otherwise leave it at a flat 39 and ignore this.
+Set it up as:
 
-Whatever you choose, do not put a fake "was $99" in the description text. It is
-the one thing in a listing a buyer can check, and it costs more trust than the
-discount buys.
+1. Product price: **59**.
+2. A discount of a **fixed $20 off**, not a percentage. 39 off 59 is 33.898%,
+   and a percentage discount will round somewhere you did not choose.
+3. Give it a **limit** — an end date or a number of uses. A discount with no
+   limit is not a launch offer, it is a lower price with extra steps, and it
+   removes the reason to buy today.
+
+I set this up from the field sheet rather than from your dashboard, so confirm
+the menu names in Gumroad itself — the discount UI has moved before and my
+recollection of it is not evidence.
+
+**The part that actually costs money if you miss it:** a Gumroad discount
+applies through its own link. Someone landing on the bare product URL sees $59
+with no strike-through. So the coded link — not the plain product URL — is what
+goes in the listing description, the demo site, the launch post, and anywhere
+else you promote it. Put the plain URL in one of those by accident and you are
+quietly charging 59.
+
+Do not write a fake "was $99" into the description text. The struck-through
+price should come from the real list price and nothing else — it is the one
+claim in a listing a buyer can check in a second, and on a listing that measures
+everything else honestly it would cost more trust than the discount buys.
 
 **Before you hit publish**
 
