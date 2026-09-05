@@ -152,6 +152,8 @@ transcription, not decisions.
 | Summary | The one-liner at the top of this file |
 | Description | The Gumroad description above, demo link on the first line |
 | Category | Software & Development, or Design if that reads better to you |
+| Framework | Next.js. Add TypeScript and Tailwind CSS too if the field takes more than one |
+| Includes source code | **On.** Full unminified source is the entire product, and buyers filter on this |
 | Tags | `nextjs`, `react`, `tailwind`, `landing-page`, `saas`, `template`, `typescript`, `mdx` |
 | Refund policy | **No refunds.** See the note below before you set it |
 | Content rating | All audiences |
