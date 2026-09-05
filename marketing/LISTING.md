@@ -280,7 +280,104 @@ Accessibility 100, best practices 100, SEO 100. Performance sits between 93 and
 Replace the demo content, which is invented. Connect the two forms to your
 provider. Drop in your own logo, which is one SVG in one component.
 
+### Filling in the Creative Market form
+
+Field by field, from the Shop Owner Application. Anything not listed here is not
+applicable to a code product and should be left empty.
+
+| Field | Value |
+| --- | --- |
+| Category | Templates & Themes → Websites & Apps → Landing Pages |
+| Product Title | `Kestrel - Next.js SaaS Landing Page Template` |
+| Product Upload | `kestrel-template.zip` (167.88 KB) |
+| Video URL | Your scroll-through, once it is hosted somewhere with a URL |
+| Primary Color | Violet / indigo — the accent token is `#5b4be8` |
+| Occasion | Leave empty. It is for seasonal artwork |
+| Compatibility | **HTML/CSS** and **Other**, nothing else |
+| AI disclosure | **Yes** |
+
+**Properties.** Only three of the offered chips mean anything here:
+
+- `Preview URL` → `https://kestrel-template.vercel.app`
+- `Layout` → Responsive
+- `Min Browser` → Any current Chrome, Firefox, Safari or Edge
+
+Skip `Layered`, `DPI`, `Columns` and `Dimensions`. They describe print and image
+assets, and filling them in with something plausible is worse than leaving them
+blank.
+
+**Compatibility, carefully.** That list is mostly design software. Tick HTML/CSS
+and Other. Do **not** tick Bootstrap — the template does not use it, and a buyer
+who filters on Bootstrap and lands here has been misled. Same reasoning rules out
+WordPress, Shopify, Magento and the rest.
+
+**Tags**
+
+```
+nextjs, next js, react, typescript, tailwind css, landing page, saas,
+website template, startup, developer tools, mdx, blog template, dark mode,
+responsive, one page
+```
+
+**Search engine listing.** Write a custom one rather than letting it generate:
+
+> A Next.js 16 landing page template for SaaS and developer tools. Six finished
+> pages, an MDX blog, light and dark themes, and a live demo to click through.
+
+### License pricing
+
+Creative Market sells three tiers and its own licence terms govern the sale, not
+the `LICENSE.md` in the zip — §12 of that file already defers to a platform's
+terms where the platform requires it.
+
+| Tier | Price |
+| --- | --- |
+| Personal | $23 |
+| Commercial | $59 |
+| Extended Commercial | $149 |
+
+$23 is the top of the $15–23 band Creative Market suggests for this category.
+Take the top of it: the suggestion is drawn from a category full of single-page
+HTML files, and this is six pages with a build pipeline. $59 keeps the Commercial
+tier level with the Gumroad list price, so the two listings do not contradict
+each other.
+
+**One conflict to resolve before you submit.** The zip contains `LICENSE.md`,
+which grants unlimited personal and client projects. A buyer who takes the $23
+Personal tier and then opens that file is holding a document granting more than
+they paid for, and the permissive document in their hand is the one that will win
+any argument. Two ways out, and the first is simpler:
+
+1. **Do not offer the Personal tier.** Sell Commercial and Extended only. The
+   licence in the zip then matches what every buyer actually bought.
+2. Keep all three tiers and add a line to the description saying Creative
+   Market's licence governs the purchase and `LICENSE.md` describes the
+   Commercial tier. This works, but you are asking a buyer to hold two licences
+   in their head, and some will not.
+
+### Preview images
+
+Recommended size is 1820×1214, which is 3:2. Nothing in `marketing/screenshots/`
+is 3:2 — the desktop shots are 16:10 and the thumbnail is 16:9 — so expect
+letterboxing. That is fine and normal; do not crop good screenshots to fit.
+
+Lead with `thumbnail.png`, then `01-home-dark`, `03-home-light`,
+`05-pricing-dark`, `07-blog-dark`, `12-mobile-home-dark`. Keep the full-page
+shots out, for the same reason as on Gumroad: at listing width they compress to
+an unreadable strip and shrink every thumbnail beside them.
+
+### Description
+
+Use the Creative Market copy above, not the Gumroad description. It is shorter,
+which suits this layout.
+
+Whichever you use, **put the demo link on the first line.** In the current draft
+it sits in the third paragraph, below the fold of the description box, which
+wastes the strongest thing in the listing.
+
 ### Software required
+
+
 
 Node.js 20.9 or newer. Any code editor. No design software needed.
 
