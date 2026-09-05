@@ -91,6 +91,51 @@ runs a Next.js build.
 
 ---
 
+### Filling in the Gumroad form
+
+Field by field, in the order Gumroad asks. Everything here is decided except the
+price, which is the one judgement call left.
+
+| Field | Value |
+| --- | --- |
+| Product type | Digital product |
+| Name | `Kestrel — Next.js 16 Landing Page Template` |
+| URL slug | `kestrel` (or `kestrel-nextjs-template` if taken) |
+| Price | See below — you have to pick |
+| Cover / thumbnail | `marketing/thumbnail.png` |
+| Gallery images | `marketing/screenshots/01, 03, 05, 07, 08, 12` in that order |
+| Video | Yours. Put it first if Gumroad lets you order it above the images |
+| Product file | `kestrel-template.zip` |
+| Summary | The one-liner at the top of this file |
+| Description | The Gumroad description above, demo link on the first line |
+| Category | Software & Development, or Design if that reads better to you |
+| Tags | `nextjs`, `react`, `tailwind`, `landing-page`, `saas`, `template`, `typescript`, `mdx` |
+| Refund policy | Whatever you choose — §11 of the licence defers to it, so they cannot conflict |
+| Content rating | All audiences |
+
+**Gallery order matters more than the count.** Six is plenty. Lead with the dark
+home page, then light, then pricing — pricing is where a buyer decides the
+template is complete rather than a hero and filler. The full-page shots
+(`02`, `04`) are better linked from the description than dropped in the gallery,
+where their aspect ratio makes every other thumbnail small.
+
+**On price.** I do not have Gumroad market data, so treat this as reasoning
+rather than research. What you are selling is six finished pages, a real MDX
+pipeline, measured accessibility, and a licence that covers client work — the
+comparison is with a developer's afternoon, not with a free theme. Somewhere in
+the **$39–59** band fits that, and a launch price at the bottom of it with the
+regular price shown struck through is the usual way to open. Going below ~$25
+tends to invite the "is this abandoned?" question rather than more sales. Pick
+the number you would not resent supporting for a year.
+
+**Before you hit publish**
+
+- Open the demo link from the description in a private window. It is the first
+  thing a buyer clicks and the one thing that must not 404.
+- Check the description renders — Gumroad's editor can eat the markdown table.
+  If it does, the plain feature list further down this file is the fallback.
+- Confirm the uploaded zip is the current one: 168 KB, unpacks to `kestrel/`.
+
 ## Creative Market
 
 Creative Market rewards a benefit-led opening and a scannable list. Same

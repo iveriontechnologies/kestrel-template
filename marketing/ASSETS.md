@@ -168,9 +168,11 @@ the build proves the shipped tree stands on its own. Current zip: 84 entries,
 - [x] `LICENSE.md` complete — 14 sections, no placeholders, and it now covers the two
       cases a buyer actually hits: delivering a finished site to the client it was
       built for, and keeping the work in a private repository.
-- [ ] If **Iverion Technologies** is registered before launch, decide whether to
-      reissue the licence in the company's name. It currently names Israel Ahunanya,
-      which is right while the company is unregistered.
+- [x] Licensor decided: **Israel Ahunanya**, the natural person, not a company name.
+      Settled 5 September 2026. Nothing to change — the licence already reads that
+      way throughout. If Iverion Technologies is registered later and you want the
+      copyright to sit with it, that becomes an assignment plus a reissued licence,
+      and it is a separate job from this launch.
 - [x] The zip excludes `context/`, `AGENTS.md`, `memory.md`, `marketing/`,
       `node_modules/`, and `.next/` — build it with the recipe below rather than by
       hand, and it cannot go wrong twice.
