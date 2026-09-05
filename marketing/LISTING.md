@@ -141,6 +141,7 @@ transcription, not decisions.
 | Field | Value |
 | --- | --- |
 | Product type | Digital product |
+| Require shipping information | **Off.** It is a physical-goods setting. Turning it on adds an address form to checkout and collects data you have no use for |
 | Name | `Kestrel — Next.js 16 Landing Page Template` |
 | URL slug | `kestrel` (or `kestrel-nextjs-template` if taken) |
 | Price | **$59** list, with a discount to **$39** — see below |
