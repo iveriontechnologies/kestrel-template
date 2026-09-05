@@ -37,57 +37,95 @@ machine came in at 76, so one run is not a measurement.
 
 ### Description
 
-**Live demo → https://kestrel-template.vercel.app**
+Written to be read out loud. If a sentence sounds like a brochure, cut it.
 
-Most landing page templates look good in the screenshots and fight you the moment
-you open them. Kestrel is built the other way round: **every user-facing string on
-the site lives in one typed config file**, and every colour lives in one CSS file.
-Change the accent token and the whole site rebrands — buttons, links, focus rings,
-the highlighted pricing tier, even the chart in the dashboard mockup.
+**A note before you paste this in:** the opening is in first person, as you. Read
+it and make sure it is true of you before it goes live. If any of it is not, say
+it your own way — a slightly clumsy sentence you mean beats a smooth one you
+don't.
 
-You get six complete pages, not a hero and some placeholders: home, pricing, a
-blog index, a blog post, a changelog, and a 404 that matches the design instead of
-being the Next.js default.
+Also: Gumroad's editor ate the markdown table last time. The numbers below are
+plain lines for that reason. Don't convert them back to a table.
 
-**What makes it different**
+---
 
-- **One file to rebrand.** `site.config.ts` is typed, so your editor tells you
-  what to fill in and the build fails rather than shipping something half-edited.
-- **Dark-first, and light is not an afterthought.** Both themes are complete, and
-  every colour pair clears WCAG AA in both — measured, not assumed.
-- **Deliberately light.** No chart library, no animation library, no analytics.
-  The dashboard mockup is hand-written SVG; the scroll reveals are 60 lines of
-  IntersectionObserver. The home page is 358 KiB on the wire.
-- **A real MDX pipeline.** Blog and changelog, frontmatter validated with zod so a
-  typo fails the build and names the file, drafts hidden in production, read time
-  calculated from the body so there is nothing to keep in sync.
-- **SEO already done.** Per-page canonicals, OpenGraph, Twitter cards, a generated
-  OG image in your brand font, sitemap, robots, and JSON-LD.
-- **Forms that work.** Newsletter and contact, with inline validation, pending
-  states, and inline confirmation. Two `TODO (buyer):` markers show you exactly
-  where to connect your provider.
+Live demo → https://kestrel-template.vercel.app
 
-**Measured, on the production build**
+Have a look at that first. It is the whole template, deployed, not a mockup.
 
-| | |
-| --- | --- |
-| Lighthouse accessibility | 100 |
-| Lighthouse best practices | 100 |
-| Lighthouse SEO | 100 |
-| Lighthouse performance | 93–95 depending on page |
-| Cumulative layout shift | 0 |
-| Home page weight | 358 KiB |
+I built Kestrel because I kept buying templates and then losing a day undoing
+them. Colours hardcoded across forty components. Copy buried in JSX. A "blog"
+that turned out to be three static pages.
 
-**What you receive**
+So the rule here was simple. Every word on the site lives in one file. Every
+colour lives in one other file. `site.config.ts` holds the copy, `globals.css`
+holds the tokens. Change `--accent` from violet to whatever you use, and the
+buttons, links, focus rings, the highlighted pricing tier and the chart in the
+dashboard mockup all follow. No find and replace.
 
-- Full source — Next.js 16, React 19, TypeScript strict, Tailwind CSS v4
-- Six pages and every section component
-- Six sample blog posts and four changelog entries, so you can see the layouts full
-- `SETUP.md`, a thirty-minute walkthrough from clone to deployed
-- Commercial licence: unlimited projects, yours and your clients'
+**Six pages, all of them finished**
 
-**Requirements:** Node.js 20.9+. Deploys to Vercel in a click, or anywhere that
-runs a Next.js build.
+- Home, ten sections
+- Pricing, with a monthly/annual toggle and a comparison table
+- Blog index, with tag filtering
+- Blog post
+- Changelog
+- A 404 that looks like the rest of the site
+
+The blog is real MDX, not a hardcoded array. Frontmatter is validated with zod,
+so a typo fails the build and tells you which file it is in. Drafts stay out of
+production. Read time is worked out from the body, so there is nothing to keep
+in sync.
+
+**Things I left out on purpose**
+
+No chart library. The dashboard mockup is SVG I wrote by hand, and it rethemes
+with your accent colour.
+
+No animation library. The scroll reveals are an IntersectionObserver and some
+CSS keyframes.
+
+No analytics, no tracking, no third-party requests at all. The fonts are
+self-hosted.
+
+The home page is 358 KiB on the wire.
+
+**Numbers, measured on a production build**
+
+Accessibility: 100
+Best practices: 100
+SEO: 100
+Performance: 93 to 95, depending on the page
+Cumulative layout shift: 0
+
+Performance is not 100 and I am not going to write that it is. It sits in the
+low nineties on a throttled mobile profile, which is where a real Next.js app
+with real fonts and real images lands.
+
+**What you get**
+
+Full source: Next.js 16, React 19, TypeScript in strict mode, Tailwind CSS v4.
+Six sample blog posts and four changelog entries, so you can see the layouts
+with something in them. A setup guide that walks from clone to deployed in about
+half an hour. Light and dark, both finished, both clearing WCAG AA contrast.
+
+**What you will still have to do**
+
+Replace the demo content. The companies and testimonials are invented. They are
+there so the layouts are not empty.
+
+Connect the forms. Newsletter and contact both work, validation and pending
+states and all, but they need your provider. Two `TODO (buyer):` markers show
+you exactly where.
+
+Drop in your own logo. It is one SVG in one component.
+
+**The licence, in one sentence:** build as many sites as you like, for yourself
+or for clients, charge whatever you charge, hand the finished site over to the
+client — you just cannot resell Kestrel itself.
+
+Node 20.9 or newer. Deploys to Vercel in a click, or anywhere that runs a
+Next.js build.
 
 ---
 
