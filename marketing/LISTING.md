@@ -93,15 +93,15 @@ runs a Next.js build.
 
 ### Filling in the Gumroad form
 
-Field by field, in the order Gumroad asks. Everything here is decided except the
-price, which is the one judgement call left.
+Field by field, in the order Gumroad asks. Every value is decided — this is
+transcription, not decisions.
 
 | Field | Value |
 | --- | --- |
 | Product type | Digital product |
 | Name | `Kestrel — Next.js 16 Landing Page Template` |
 | URL slug | `kestrel` (or `kestrel-nextjs-template` if taken) |
-| Price | See below — you have to pick |
+| Price | **$39** |
 | Cover / thumbnail | `marketing/thumbnail.png` |
 | Gallery images | `marketing/screenshots/01, 03, 05, 07, 08, 12` in that order |
 | Video | Yours. Put it first if Gumroad lets you order it above the images |
@@ -119,14 +119,17 @@ template is complete rather than a hero and filler. The full-page shots
 (`02`, `04`) are better linked from the description than dropped in the gallery,
 where their aspect ratio makes every other thumbnail small.
 
-**On price.** I do not have Gumroad market data, so treat this as reasoning
-rather than research. What you are selling is six finished pages, a real MDX
-pipeline, measured accessibility, and a licence that covers client work — the
-comparison is with a developer's afternoon, not with a free theme. Somewhere in
-the **$39–59** band fits that, and a launch price at the bottom of it with the
-regular price shown struck through is the usual way to open. Going below ~$25
-tends to invite the "is this abandoned?" question rather than more sales. Pick
-the number you would not resent supporting for a year.
+**Price: $39.** Decided 5 September 2026.
+
+If you want the struck-through-price effect later, Gumroad does it by raising the
+list price and adding a discount — not by editing the number. Raising it on a
+product that already has sales is the awkward direction, so if a launch discount
+appeals at all, set the list price higher *before* the first sale and discount
+down to 39. Otherwise leave it at a flat 39 and ignore this.
+
+Whatever you choose, do not put a fake "was $99" in the description text. It is
+the one thing in a listing a buyer can check, and it costs more trust than the
+discount buys.
 
 **Before you hit publish**
 
