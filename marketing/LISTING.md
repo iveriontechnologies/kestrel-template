@@ -181,12 +181,16 @@ I set this up from the field sheet rather than from your dashboard, so confirm
 the menu names in Gumroad itself — the discount UI has moved before and my
 recollection of it is not evidence.
 
-**The part that actually costs money if you miss it:** a Gumroad discount
-applies through its own link. Someone landing on the bare product URL sees $59
-with no strike-through. So the coded link — not the plain product URL — is what
-goes in the listing description, the demo site, the launch post, and anywhere
-else you promote it. Put the plain URL in one of those by accident and you are
-quietly charging 59.
+**Correction, checked against the live listing on 5 September 2026.** I said
+earlier that the discount only applies through its own coded link and that the
+bare product URL would charge $59. That is wrong as configured. The discount
+(`MXHVMZKS`, fixed $20 off, expires 5 October) applies on the plain product URL:
+the page shows **$39 with $59 struck through**, a "$20 off will be applied at
+checkout" banner, and the Add to cart link carries the code by itself. So
+`https://iverion.gumroad.com/l/kestrel` is safe to share anywhere — no coded
+link needed.
+
+Worth re-checking after the expiry date, when the page reverts to $59.
 
 Do not write a fake "was $99" into the description text. The struck-through
 price should come from the real list price and nothing else — it is the one
@@ -218,6 +222,10 @@ these is a reason to change your mind, they are just the shape of it.
 - Check the description renders — Gumroad's editor can eat the markdown table.
   If it does, the plain feature list further down this file is the fallback.
 - Confirm the uploaded zip is the current one: 168 KB, unpacks to `kestrel/`.
+- **Retype the demo link rather than pasting it.** Pasting a URL straight into
+  Gumroad's editor has now truncated it twice: the anchor href is right but the
+  visible text loses its last character, so it reads `…vercel.ap` with a stray
+  `p` after it. Type the line, then select the words and apply the link.
 
 ## Creative Market
 
